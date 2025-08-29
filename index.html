@@ -48,7 +48,7 @@
   }
 
   .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 3rem auto;
     background: #ffffffd8;
     padding: 2.5rem;
@@ -62,7 +62,7 @@
   }
   .image-wrap img {
     width: 100%;
-    max-width: 360px;
+    max-width: 180px;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
@@ -94,6 +94,9 @@
     text-align: justify;
   }
 
+  .center-text { text-align: center; margin-bottom: 1.5rem; }
+  .center-text p { text-align: center; }
+
   .highlight {
     background: var(--petal);
     padding: 0.25rem 0.5rem;
@@ -111,6 +114,7 @@
     white-space: pre-wrap;
     line-height: 1.9;
     font-size: 1.07rem;
+    text-align: center; /* ✅ verses centered */
   }
 
   .lang-tag {
@@ -124,18 +128,16 @@
     margin-bottom: .6rem;
   }
 
-  .center-text {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
   figure {
     margin: 1.5rem auto;
     text-align: center;
-    max-width: 700px;
+    max-width: 900px;
   }
   figure img {
-    width: 100%;
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 14px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.18);
   }
@@ -169,6 +171,7 @@
   @media (max-width: 768px) {
     header h1 { font-size: 2.6rem; }
     .container { margin: 2rem 1rem; padding: 1.5rem; }
+    figure img { width: 100%; }
   }
   @media (max-width: 420px) {
     header h1 { font-size: 2.2rem; }
@@ -193,16 +196,18 @@
       <p>We are reflecting on <span class="highlight">Pasuram 29</span> from the sacred <em>Thiruppavai</em> by Andal.</p>
     </div>
 
+    <h2>Pasuram 29</h2>
+
     <div class="subtitle"><span class="lang-tag">IAST/Devanagari script</span></div>
     <div class="verse">
-शिट्रम् शिरुगाले वन्दुन्नै च्चेवित्तु उन् 
+शिट्रम् शिरुगाले वन्दुन्नै च्चेवित्तु उन 
 पॊट्रामरै अडिये पोट्रुम् परुळ् केळाय्  
 पॆट्रम् मेय्तुण्णुम् कुलत्तिल् पिरन्दु- नी 
 कुट्रेवल् ऎङ्गळे कलामल पोगादु 
-इट्रै प्परै कॊळ्वान् अन्तु काण कोविन्दा !
+इट्रै प्परै कॊळ्वान् अन्तु काण कोविन्दா !
 ऎट्रैक्कुम् एळेऴ पिरविक्कुम् उन् तन्नो - 
 डुट्रोमे आवोम् उनक्के नाम् आट् चॆय्वोम्  
-மद्रै नम् कामङ्गळ् माद्रेलोर् ऐम् पावाय் ॥ 29 ॥
+மद्रை நம் காமங்கள் மாத்ரேலோர் ஐம் பாவாய் ॥ 29 ॥
     </div>
 
     <div class="subtitle"><span class="lang-tag">Tamil script</span></div>
@@ -270,10 +275,10 @@
     </blockquote>
   </div>
 
-  <footer>
-    &copy; Devotional Rendering of Andal's Pasuram | Thiruppavai 🙏 <br>
-    Source credit: <strong>JKYog</strong> (jkyog.org)
-  </footer>
-
+    <footer>
+      &copy; Devotional Rendering of Andal's Pasuram | Thiruppavai 🙏 <br>
+      Source credit: <strong>JKYog</strong> (jkyog.org)
+    </footer>
+  </div>
 </body>
 </html>
