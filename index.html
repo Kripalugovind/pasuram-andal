@@ -3,154 +3,312 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pasuram 2 - Andal</title>
+  <title>Pasuram 29 - Andal</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-  body {
-  margin: 0;
-  font-family: 'Merriweather', serif;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(243, 231, 233, 0.4)),
-                  url('https://d11n2py6p6cfxh.cloudfront.net/Image_Temple_d9f82dbc63.webp');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #1a0d06;
-      line-height: 1.8;
+  :root{
+    --ink:#1a0d06;
+    --rose:#7a1f42;
+    --rose-soft:#d9a7c7;
+    --petal:#fce9d4;
+    --petal-soft:#fff5f8;
   }
 
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: var(--ink);
+    line-height: 1.85;
+    background:
+      linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(243,231,233,0.55)),
+      url('https://d11n2py6p6cfxh.cloudfront.net/Image_Temple_d9f82dbc63.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: linear-gradient(135deg, #f8d3e4, #fce9d4);
-      border-bottom: 4px solid #d9a7c7;
-    }
+  header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background: linear-gradient(135deg, #f8d3e4, #fce9d4);
+    border-bottom: 4px solid var(--rose-soft);
+  }
+  header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: var(--rose);
+    margin: 0 0 .5rem 0;
+  }
+  header p {
+    font-size: 1.15rem;
+    color: #4b2e1e;
+    margin: 0;
+    text-align: center;
+  }
 
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.2rem;
-      color: #7a1f42;
-      margin-bottom: 0.5rem;
-    }
+  .container {
+    max-width: 900px;
+    margin: 3rem auto;
+    background: #ffffffd8;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
 
-    header p {
-      font-size: 1.2rem;
-      color: #4b2e1e;
-      margin: 0;
-      text-align: center;
-    }
+  .image-wrap {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .image-wrap img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .image-wrap img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  }
 
+  h2 {
+    font-size: 2rem;
+    color: var(--rose);
+    text-align: center;
+    margin: 0 0 1.25rem 0;
+    letter-spacing: .3px;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #5c3b3b;
+    margin-top: -0.6rem;
+    margin-bottom: 1.2rem;
+    font-size: .98rem;
+  }
+
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1.1rem 0;
+    text-align: justify;
+  }
+
+  .highlight {
+    background: var(--petal);
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--rose);
+  }
+
+  .verse {
+    background: var(--petal-soft);
+    border: 1px solid var(--rose-soft);
+    border-radius: 14px;
+    padding: 1.1rem 1.2rem;
+    margin: 1.25rem 0 1.75rem 0;
+    white-space: pre-wrap;
+    line-height: 1.9;
+    font-size: 1.07rem;
+  }
+
+  .lang-tag {
+    display: inline-block;
+    background: var(--petal);
+    color: var(--rose);
+    padding: .25rem .6rem;
+    border-radius: 999px;
+    font-size: .85rem;
+    font-weight: 700;
+    margin-bottom: .6rem;
+  }
+
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 1.5rem 0 2rem 0;
+  }
+  .grid-gallery figure {
+    margin: 0;
+    background: #fff;
+    border: 1px solid #f0d5e2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .grid-gallery figure:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
+  .grid-gallery img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+  .grid-gallery figcaption {
+    padding: .6rem .8rem .8rem;
+    font-size: .9rem;
+    color: #5c4a42;
+    text-align: center;
+  }
+
+  blockquote {
+    font-style: italic;
+    color: #5c3b3b;
+    background: var(--petal-soft);
+    border-left: 6px solid var(--rose-soft);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+  }
+
+  .center-text { text-align: center; }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+    color: #5c4a42;
+    background: #fdf1f5;
+    border-top: 3px solid #e4b2c6;
+    margin-top: 3rem;
+  }
+
+  a, button { outline: none; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px dashed var(--rose);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .image-wrap img { transition: none !important; }
+    .image-wrap img:hover { transform: none !important; box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+  }
+
+  @media (max-width: 900px) {
+    .grid-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .grid-gallery { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    header { padding: 2.25rem 1rem 1.5rem; }
+    header h1 { font-size: 2.6rem; }
+    header p { font-size: 1rem; }
     .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      background: #ffffffd8;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      margin: 2rem 1rem;
+      padding: 1.5rem;
+      border-radius: 16px;
     }
-
-    .image-wrap {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .image-wrap img {
-      max-width: 320px;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .image-wrap img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #7a1f42;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1.2rem;
-      text-align: justify;
-    }
-
-    .highlight {
-      background: #fce9d4;
-      padding: 0.4rem 0.6rem;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #7a1f42;
-    }
-
-    .ornament {
-      display: block;
-      margin: 2rem auto;
-      max-width: 120px;
-    }
-
-    blockquote {
-      font-style: italic;
-      color: #5c3b3b;
-      background: #fff5f8;
-      border-left: 6px solid #d9a7c7;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      margin: 2rem 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.95rem;
-      color: #5c4a42;
-      background: #fdf1f5;
-      border-top: 3px solid #e4b2c6;
-      margin-top: 3rem;
-    }
-.center-text {
-  text-align: center;
-}
-
+    h2 { font-size: 1.6rem; }
+    p { font-size: 1rem; text-align: left; }
+  }
+  @media (max-width: 420px) {
+    header h1 { font-size: 2.2rem; }
+    .image-wrap img { max-width: 100%; }
+  }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Pasuram 2 - Andal</h1>
+    <h1>Pasuram 29 - Andal</h1>
     <p>From the Thiruppavai – Devotional Verses of Andal</p>
   </header>
 
-  <div class="container">
+  <div class="container" role="main">
     <div class="image-wrap">
-      <img src="https://d11n2py6p6cfxh.cloudfront.net/Andal_1bbffb68ab.jpg" alt="Andal">
+      <img src="https://d11n2py6p6cfxh.cloudfront.net/Andal_1bbffb68ab.jpg" alt="Portrait depiction of Andal with traditional ornamentation">
     </div>
 
-  <div class="center-text">
-  <p><span class="highlight">Vratham</span> means - Vow or Resolve.</p>
+    <div class="center-text">
+      <p><span class="highlight">Vratham</span> means – Vow or Resolve.</p>
+      <p>We are reflecting on <span class="highlight">Pasuram 29</span> from the sacred <em>Thiruppavai</em> by Andal.</p>
+    </div>
 
-  <p>A <span class="highlight">pasuram</span> is a devotional poem written in the Tamil language, and "pasuram by Andal" refers to the verses from Andal's work, primarily the <em>Thiruppavai</em>, a collection of 30 pasurams.</p>
+    <h2>Pasuram 29 (Devanagari)</h2>
+    <div class="subtitle"><span class="lang-tag">IAST/Devanagari script</span></div>
+    <div class="verse">
+शिट्रम् शिरुगाले वन्दुन्नै च्चेवित्तु उन् 
+पॊट्रामरै अडिये पोट्रुम् परुळ् केळाय्  
+पॆट्रम् मेय्तुण्णुम् कुलत्तिल् पिरन्दु- नी 
+कुट्रेवल् ऎङ्गळे कलामल पोगादु 
+इट्रै प्परै कॊळ्वान् अन्तु काण कोविन्दा !
+ऎट्रैक्कुम् एळेऴ पिरविक्कुम् उन् तन्नो - 
+डुट्रोमे आवोम् उनक्के नाम् आट् चॆय्वोम्  
+मद्रै नम् कामङ्गळ् माद्रेलोर् ऐम् पावाय् ॥ 29 ॥
+    </div>
 
-  <p>We have taken one of the Pasuram here.</p>
-</div>
+    <h2>Pasuram 29 (Tamil)</h2>
+    <div class="subtitle"><span class="lang-tag">Tamil script</span></div>
+    <div class="verse">
+சிற்றம் சிறு காலே வந்து உன்னை சேவித்து உன்
+பொற்றாமரை அடியே போற்றும் பொருள் கேளாய்
+பெற்றம் மேய்த்து உண்ணும் குலத்தில் பிறந்து நீ
+குற்று ஏவல் எங்களைக் கொள்ளாமல் போகாது
+இற்றைப் பறை கொள்வான் அன்று காண் கோவிந்தா
+எற்றைக்கும் ஏழ் ஏழ் பிறவிக்கும் உன் தன்னோடு
+உற்றோமே ஆவோம் உனக்கே நாம் ஆட்செய்வோம்
+மற்றை நம் காமங்கள் மாற்றேலோர் எம்பாவாய் ॥ 29 ॥
+    </div>
 
-    <h2>Pasuram - 2</h2>
+    <h2>Gallery</h2>
+    <div class="grid-gallery">
+      <!-- Replace image URLs below with any of your own if you like -->
+      <figure>
+        <img src="https://d11n2py6p6cfxh.cloudfront.net/Image_Temple_d9f82dbc63.webp" alt="Temple ambience">
+        <figcaption>Temple ambience</figcaption>
+      </figure>
+      <figure>
+        <img src="https://d11n2py6p6cfxh.cloudfront.net/Andal_1bbffb68ab.jpg" alt="Andal">
+        <figcaption>Andal</figcaption>
+      </figure>
+      <figure>
+        <img src="https://d11n2py6p6cfxh.cloudfront.net/Swami_Ji_a86052dada.jpg" alt="Satsang & guidance">
+        <figcaption>Satsang & guidance</figcaption>
+      </figure>
+    </div>
 
-    <p>After singing about Sriman Narayana in the first pasuram, Andal sings today about the Lord who is beautifully reclining on Adisesha in the milky ocean. She calls all those who are born to live in this world, to listen carefully about this vrata Rules and Regulations we all should follow so that we can enjoy the Lord just as the Gopikas enjoyed Him in Nanda Gokulam.</p>
+    <h2>Commentary</h2>
+    <p>
+      Andal sings pointing at the time when they came to meet Bhagavan. She says —
+      “Hey Bhagavan, we didn't come here during <em>kaalai</em> which is usually the time when the people with <em>tamasa</em> guna wake up to do their daily routine.
+      We did not even come here during <em>shiru kaalai</em> which is usually the time when people with <em>sattva</em> guna wake up to worship You before starting their daily routine.
+      We have come during <em>chittrañ ciṛu kaalai</em> unable to get any sleep at all, because we are unable to bear this separation from You.
+      We have come because Your Divine Feet are far more precious to us than glittering gold. Those Feet are attracting us like how honey in the lotus flowers attracts the bees.
+    </p>
 
-    <p>She says – “We should sing the praise of the Lord's Divine Feet. Then We don’t even need to eat tasty things like ghee or milk because we are already full of enjoyment singing His praises. We must take a bath early in the morning; We must not waste any time or energy decorating ourselves or gossiping about others. We need to give abundantly to others. Even after doing abundant charity – we will consider ourselves to be only the instrument and NOT the Kartha. By following this Vratam – we will think about the Lord who is the means for our liberation and experience divine bliss”.</p>
+    <p>
+      Normally You are the One who rushes to Your devotees whenever they need and You are the One who feels sad if Your devotees come in search of You before You manage to reach them.
+      This time, we have come so far to see You. Having such a <em>vatsalya</em> guṇam, even after knowing that we have come this far — why are You questioning us about our qualifications and intentions?
+      Govinda! Did You think that we wanted to praise You for this one day, and take the drum You gave us and leave? Have You also lost Your intelligence because of going behind those cows?
+      We trust You because You are born in the Yadava <em>kulam</em> like us and it is Your foremost responsibility to protect us and grant us our wishes.
+      Then why are You still hesitating? Now, please listen closely to what we are asking.
+    </p>
 
+    <p>
+      We have come here to ask You — that we want to share the same relationship with You as the Nityasooris do. We want the <em>soubhagyam</em> of doing Your personal service always, close to You in Your presence —
+      just like how Adiśeṣa, Garuḍa, Mother Sri Mahalakshmi and all the Nityasooris serve You eternally.
+      Also, we are not asking this boon for this one day. As long as time exists and however many <em>janmas</em> we need to take — in every <em>janma</em> we want to remain in such a close relationship with You.
+      We do not care if we have to be born on earth, heaven or hell. For us every place is Sri Vaikunṭham if You are with us and if we are involved in Your <em>antaranga kainkaryam</em>.
+      We pray to You — please take each one of our little desires and small wishes and convert them all into this one single desire: to be united with You forever.
+    </p>
+
+    <blockquote>
+      “எற்றைக்கும் ஏழ் ஏழ் பிறவிக்கும் உன் தன்னோடு உற்றோமே ஆவோம் — for all time and births, may we be united with You.”
+    </blockquote>
   </div>
 
   <footer>
-    &copy; Devotional Rendering of Andal's Pasuram | Thiruppavai 🙏
+    &copy; Devotional Rendering of Andal's Pasuram | Thiruppavai 🙏 <br>
+    Source credit: <strong>JKYog</strong> (jkyog.org)
   </footer>
 
 </body>
 </html>
-
-
