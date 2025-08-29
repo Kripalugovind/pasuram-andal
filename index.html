@@ -84,7 +84,6 @@
   .subtitle {
     text-align: center;
     color: #5c3b3b;
-    margin-top: -0.6rem;
     margin-bottom: 1.2rem;
     font-size: .98rem;
   }
@@ -125,36 +124,26 @@
     margin-bottom: .6rem;
   }
 
-  .grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    margin: 1.5rem 0 2rem 0;
-  }
-  .grid-gallery figure {
-    margin: 0;
-    background: #fff;
-    border: 1px solid #f0d5e2;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    transition: transform .25s ease, box-shadow .25s ease;
-  }
-  .grid-gallery figure:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-  }
-  .grid-gallery img {
-    display: block;
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-  }
-  .grid-gallery figcaption {
-    padding: .6rem .8rem .8rem;
-    font-size: .9rem;
-    color: #5c4a42;
+  .center-text {
     text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  figure {
+    margin: 1.5rem auto;
+    text-align: center;
+    max-width: 700px;
+  }
+  figure img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  }
+  figure figcaption {
+    margin-top: .6rem;
+    font-size: .95rem;
+    color: #5c3b3b;
+    font-style: italic;
   }
 
   blockquote {
@@ -167,8 +156,6 @@
     margin: 2rem 0;
   }
 
-  .center-text { text-align: center; }
-
   footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -179,35 +166,9 @@
     margin-top: 3rem;
   }
 
-  a, button { outline: none; }
-  a:focus-visible, button:focus-visible {
-    outline: 3px dashed var(--rose);
-    outline-offset: 3px;
-    border-radius: 8px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .image-wrap img { transition: none !important; }
-    .image-wrap img:hover { transform: none !important; box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-  }
-
-  @media (max-width: 900px) {
-    .grid-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
-  @media (max-width: 560px) {
-    .grid-gallery { grid-template-columns: 1fr; }
-  }
   @media (max-width: 768px) {
-    header { padding: 2.25rem 1rem 1.5rem; }
     header h1 { font-size: 2.6rem; }
-    header p { font-size: 1rem; }
-    .container {
-      margin: 2rem 1rem;
-      padding: 1.5rem;
-      border-radius: 16px;
-    }
-    h2 { font-size: 1.6rem; }
-    p { font-size: 1rem; text-align: left; }
+    .container { margin: 2rem 1rem; padding: 1.5rem; }
   }
   @media (max-width: 420px) {
     header h1 { font-size: 2.2rem; }
@@ -232,7 +193,6 @@
       <p>We are reflecting on <span class="highlight">Pasuram 29</span> from the sacred <em>Thiruppavai</em> by Andal.</p>
     </div>
 
-    <h2>Pasuram 29 (Devanagari)</h2>
     <div class="subtitle"><span class="lang-tag">IAST/Devanagari script</span></div>
     <div class="verse">
 शिट्रम् शिरुगाले वन्दुन्नै च्चेवित्तु उन् 
@@ -242,10 +202,9 @@
 इट्रै प्परै कॊळ्वान् अन्तु काण कोविन्दा !
 ऎट्रैक्कुम् एळेऴ पिरविक्कुम् उन् तन्नो - 
 डुट्रोमे आवोम् उनक्के नाम् आट् चॆय्वोम्  
-मद्रै नम् कामङ्गळ् माद्रेलोर् ऐम् पावाय् ॥ 29 ॥
+மद्रै नम् कामङ्गळ् माद्रेलोर् ऐम् पावाय் ॥ 29 ॥
     </div>
 
-    <h2>Pasuram 29 (Tamil)</h2>
     <div class="subtitle"><span class="lang-tag">Tamil script</span></div>
     <div class="verse">
 சிற்றம் சிறு காலே வந்து உன்னை சேவித்து உன்
@@ -258,24 +217,15 @@
 மற்றை நம் காமங்கள் மாற்றேலோர் எம்பாவாய் ॥ 29 ॥
     </div>
 
-    <h2>Gallery</h2>
-    <div class="grid-gallery">
-      <!-- Replace image URLs below with any of your own if you like -->
-      <figure>
-        <img src="https://d11n2py6p6cfxh.cloudfront.net/Image_Temple_d9f82dbc63.webp" alt="Temple ambience">
-        <figcaption>Temple ambience</figcaption>
-      </figure>
-      <figure>
-        <img src="https://d11n2py6p6cfxh.cloudfront.net/Andal_1bbffb68ab.jpg" alt="Andal">
-        <figcaption>Andal</figcaption>
-      </figure>
-      <figure>
-        <img src="https://d11n2py6p6cfxh.cloudfront.net/Swami_Ji_a86052dada.jpg" alt="Satsang & guidance">
-        <figcaption>Satsang & guidance</figcaption>
-      </figure>
-    </div>
-
     <h2>Commentary</h2>
+    <p>
+      When Bhagavan questions Godha Devi and Ghoshthi about their intentions
+      behind the Vratham and their rights and merits to get the Vratha Phalitam –
+      in yesterday's Pasuram Andal humbly did <em>Kshama Prardhana</em> to Bhagavan Sri Krishna and answered that –
+      all they know is that they have the good fortune to be born in the Gopa kulam as Bhagavan Himself.
+      Today Andal continues to answer the question and talk about what they actually want.
+    </p>
+
     <p>
       Andal sings pointing at the time when they came to meet Bhagavan. She says —
       “Hey Bhagavan, we didn't come here during <em>kaalai</em> which is usually the time when the people with <em>tamasa</em> guna wake up to do their daily routine.
@@ -283,6 +233,11 @@
       We have come during <em>chittrañ ciṛu kaalai</em> unable to get any sleep at all, because we are unable to bear this separation from You.
       We have come because Your Divine Feet are far more precious to us than glittering gold. Those Feet are attracting us like how honey in the lotus flowers attracts the bees.
     </p>
+
+    <figure>
+      <img src="https://d11n2py6p6cfxh.cloudfront.net/DALL_E_2025_08_29_11_03_56_A_group_of_young_graceful_Indian_village_girls_standing_at_early_dawn_in_front_of_a_divine_palace_in_Vrindavan_They_are_dressed_in_traditional_South_cd27b901c3.webp" alt="Godha Devi and companions at dawn">
+      <figcaption>At the sacred hour of "Chittrañ ciṛu kālai", Godha Devi and her companions stand in deep devotion before Krishna’s abode, their innocent eyes pleading not for worldly gifts, but for eternal service at His divine feet.</figcaption>
+    </figure>
 
     <p>
       Normally You are the One who rushes to Your devotees whenever they need and You are the One who feels sad if Your devotees come in search of You before You manage to reach them.
@@ -292,6 +247,11 @@
       Then why are You still hesitating? Now, please listen closely to what we are asking.
     </p>
 
+    <figure>
+      <img src="https://d11n2py6p6cfxh.cloudfront.net/3dd55ae0_aa8e_46aa_9808_d5512216175a_52599763fb.webp" alt="Godha Devi in surrender">
+      <figcaption>At the sacred dawn of Chittrañ ciṛu kālai, Godha Devi sits in quiet surrender before Krishna’s abode, her innocent, love-filled eyes praying not for worldly joys, but for eternal union and intimate service at His divine feet, just like the Nityasuris.</figcaption>
+    </figure>
+
     <p>
       We have come here to ask You — that we want to share the same relationship with You as the Nityasooris do. We want the <em>soubhagyam</em> of doing Your personal service always, close to You in Your presence —
       just like how Adiśeṣa, Garuḍa, Mother Sri Mahalakshmi and all the Nityasooris serve You eternally.
@@ -299,6 +259,11 @@
       We do not care if we have to be born on earth, heaven or hell. For us every place is Sri Vaikunṭham if You are with us and if we are involved in Your <em>antaranga kainkaryam</em>.
       We pray to You — please take each one of our little desires and small wishes and convert them all into this one single desire: to be united with You forever.
     </p>
+
+    <figure>
+      <img src="https://d11n2py6p6cfxh.cloudfront.net/bc1cca33_d5c3_4cbf_95f8_7d69a5455ce6_635c469edc.webp" alt="Sri Krishna at the doorway">
+      <figcaption>At the tender hour of Chittrañ ciṛu kālai, Bhagavān Sri Krishna stands at the doorway of His divine abode, draped in yellow silk, flute in hand, and crowned with a peacock feather—His gentle, mischievous smile and loving eyes quietly test the depth of devotion before Him, even as His heart is already moved by its purity.</figcaption>
+    </figure>
 
     <blockquote>
       “எற்றைக்கும் ஏழ் ஏழ் பிறவிக்கும் உன் தன்னோடு உற்றோமே ஆவோம் — for all time and births, may we be united with You.”
